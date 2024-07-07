@@ -1,4 +1,3 @@
-import { Appbar } from "../components/Appbar"
 import { AppbarInitial } from "../components/AppbarInitial"
 import { LandingPageBody } from "../components/LandingPageBody"
 

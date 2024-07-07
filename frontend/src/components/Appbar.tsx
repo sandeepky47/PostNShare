@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useUserInfo, useVerify } from "../hooks";
+import { useUserInfo} from "../hooks";
 import { ProfileDropdown } from "./ProfileDropdown";
 
 export const Appbar = () => {

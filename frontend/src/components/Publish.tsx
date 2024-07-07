@@ -1,16 +1,12 @@
 import { Appbar } from "../components/Appbar"
 import axios from "axios";
 import { BACKEND_URL } from "../config";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ChangeEvent, useState } from "react";
-import React, { memo, useEffect, useRef } from "react";
-import EditorJS, { OutputData } from "@editorjs/editorjs";
-import { EDITOR_JS_TOOLS } from "../tools/editortool";
 
 export const Publish = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [dbData, setDbData] = useState("");
     const navigate = useNavigate();
     const currentDateTime = new Date().toISOString();
 

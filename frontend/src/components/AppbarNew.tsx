@@ -28,7 +28,7 @@ export const AppbarNew = () => {
                 </Link>
 
                 {/* <Avatar size={"big"} name="Sandeep" /> */}
-                <ProfileDropdown />
+                <ProfileDropdown username="sandeep" />
             </>
             }
 

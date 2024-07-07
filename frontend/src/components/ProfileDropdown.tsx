@@ -11,7 +11,7 @@ export function ProfileDropdown({username}: {username : string}) {
         setIsOpen(!isOpen);
     };
 
-    const { user, loading} = useUserInfo();
+    const { user} = useUserInfo();
 
     return <div className=" ml-3 inline-flex items-center justify-center">
         <div>
