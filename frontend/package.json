@@ -18,7 +18,7 @@
     "@editorjs/list": "^1.9.0",
     "@editorjs/paragraph": "^2.11.4",
     "@heroicons/react": "^2.1.3",
-    "@sandeepky47/medium-common": "^1.0.2",
+    "@sandeepky47/postnshare-common": "^1.0.0",
     "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

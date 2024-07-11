@@ -1,6 +1,6 @@
 {
-  "name": "@sandeepky47/medium-common",
-  "version": "1.0.2",
+  "name": "@sandeepky47/postnshare-common",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {

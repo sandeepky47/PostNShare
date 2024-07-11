@@ -2,7 +2,7 @@ import { Hono } from 'hono';
 import { PrismaClient } from '@prisma/client/edge';
 import { withAccelerate } from '@prisma/extension-accelerate';
 import { sign, verify } from 'hono/jwt'
-import { signinInput, signupInput } from '@sandeepky47/medium-common';
+import { signinInput, signupInput } from '@sandeepky47/postnshare-common';
 
 // Create the main Hono app
 export const userRouter = new Hono<{
@@ -30,7 +30,7 @@ userRouter.post('/signup', async (c) => {
 		}
 		const user = await prisma.user.create({
 			data: {
-				username: body.email,
+				username: body.username,
 				password: body.password,
 				name: body?.name
 			}
@@ -61,7 +61,7 @@ userRouter.post('/signin', async (c) => {
 	}
 	const user = await prisma.user.findUnique({
 		where: {
-			username: body.email
+			username: body.username
 		}
 	})
 

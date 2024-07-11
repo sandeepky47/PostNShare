@@ -2,7 +2,7 @@ import { Hono } from 'hono';
 import { PrismaClient } from '@prisma/client/edge';
 import { withAccelerate } from '@prisma/extension-accelerate';
 import { verify } from 'hono/jwt'
-import { createBlogInput, updateBlogInput } from '@sandeepky47/medium-common';
+import { createBlogInput, updateBlogInput } from '@sandeepky47/postnshare-common';
 
 // Create the main Hono app
 export const blogRouter = new Hono<{
@@ -40,19 +40,13 @@ blogRouter.use('/*', async (c, next) => {
 
 blogRouter.post('/', async (c) => {
     const authorId = c.get('userId');
-    console.log(`Inside blog post ().............${authorId}`);
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate())
 
     const body = await c.req.json();
-    const publishDateTimeType = typeof(body.publishDateTime);
-    console.log(`Create blog body ().............${body.publishDateTime}`);
-    console.log(`Type ().............${publishDateTimeType}`);
-
 
     const {success} = createBlogInput.safeParse(body);
-    console.log(`is zod success ().............${success}`);
     if(!success){
         c.status(411);
         return c.json({
@@ -152,7 +146,6 @@ blogRouter.get('/author', async (c) => {
 
 
 blogRouter.get('/:id', async (c) => {
-    console.log("Inside blog get ().............");
 
     const postId = c.req.param('id');
     const prisma = new PrismaClient({

@@ -6,7 +6,7 @@
   "dependencies": {
     "@prisma/client": "^5.10.2",
     "@prisma/extension-accelerate": "^1.0.0",
-    "@sandeepky47/medium-common": "^1.0.2",
+    "@sandeepky47/postnshare-common": "^1.0.0",
     "hono": "4.0.6",
     "prisma": "^5.10.2"
   },

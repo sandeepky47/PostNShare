@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState, ChangeEvent } from "react";
-import { SignupInput } from "@sandeepky47/medium-common";
+import { SignupInput } from "@sandeepky47/postnshare-common";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 
@@ -9,7 +9,7 @@ export const Auth = ({ type }: { type: "signin" | "signup" }) => {
     const navigate = useNavigate();
     const [postInputs, setPostInputs] = useState<SignupInput>({
         name: "",
-        email: "",
+        username: "",
         password: ""
     });
 
@@ -23,7 +23,6 @@ export const Auth = ({ type }: { type: "signin" | "signup" }) => {
             navigate("/blogs");
         } catch (e) {
             alert("Error while signing up")
-            // alert the user here that the request failed
         }
     }
 
@@ -40,20 +39,20 @@ export const Auth = ({ type }: { type: "signin" | "signup" }) => {
                             {type === "signin" ? "Sign up" : "Sign in"}</Link>
                     </div>
                 </div>
-                {type === "signup" ? <LabelledInput label="Name" placeholder="Sandeep" onchange={(e) => {
+                {type === "signup" ? <LabelledInput label="Name" placeholder="name" onchange={(e) => {
                     setPostInputs({
                         ...postInputs,
                         name: e.target.value
                     })
                 }} /> : null}
 
-                <LabelledInput label="Email" placeholder="Sandeep@gmail.com" onchange={(e) => {
+                <LabelledInput label="Username" placeholder="xyz@gmail.com" onchange={(e) => {
                     setPostInputs({
                         ...postInputs,
-                        email: e.target.value
+                        username: e.target.value
                     })
                 }} />
-                <LabelledInput label="Password" type="password" placeholder="1234" onchange={(e) => {
+                <LabelledInput label="Password" type="password" placeholder="password" onchange={(e) => {
                     setPostInputs({
                         ...postInputs,
                         password: e.target.value
